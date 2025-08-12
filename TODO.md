@@ -51,7 +51,7 @@
 - [x] 创建 NestJS 应用
 - [x] 配置 TypeORM 和 PostgreSQL
 - [x] 配置 Redis 连接
-- [ ] 设置 Swagger 文档
+- [x] 设置 Swagger 文档
 
 ### 2.2 数据库设计
 
