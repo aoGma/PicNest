@@ -1,11 +1,11 @@
 import {
-  Entity,
-  PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
-  UpdateDateColumn,
-  OneToMany,
+  Entity,
   Index,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 import { Image } from './image.entity';
 
@@ -26,7 +26,8 @@ export class User {
   @Column()
   password: string;
 
-  @Column({ nullable: true })
+  @Column({ unique: true })
+  @Index()
   username: string;
 
   @Column({ nullable: true })
@@ -57,6 +58,6 @@ export class User {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @OneToMany(() => Image, (image) => image.user)
+  @OneToMany(() => Image, image => image.user)
   images: Image[];
 }

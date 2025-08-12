@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Delete, Body, Param } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -25,7 +25,7 @@ export class AppController {
 
   @Post('cache')
   async setCache(
-    @Body() body: { key: string; value: any; ttl?: number },
+    @Body() body: { key: string; value: any; ttl?: number }
   ): Promise<{ status: string; message: string }> {
     try {
       await this.appService.setCache(body.key, body.value, body.ttl);
@@ -40,7 +40,7 @@ export class AppController {
 
   @Get('cache/:key')
   async getCache(
-    @Param('key') key: string,
+    @Param('key') key: string
   ): Promise<{ status: string; data?: unknown; message?: string }> {
     try {
       const value = await this.appService.getCache(key);
@@ -55,7 +55,7 @@ export class AppController {
 
   @Delete('cache/:key')
   async deleteCache(
-    @Param('key') key: string,
+    @Param('key') key: string
   ): Promise<{ status: string; message: string }> {
     try {
       await this.appService.deleteCache(key);

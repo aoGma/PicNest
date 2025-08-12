@@ -111,13 +111,13 @@ export class InitialMigration1755010660370 implements MigrationInterface {
   public async down(queryRunner: QueryRunner): Promise<void> {
     // 删除外键约束
     await queryRunner.query(
-      `ALTER TABLE "shares" DROP CONSTRAINT "FK_shares_image"`,
+      `ALTER TABLE "shares" DROP CONSTRAINT "FK_shares_image"`
     );
     await queryRunner.query(
-      `ALTER TABLE "shares" DROP CONSTRAINT "FK_shares_user"`,
+      `ALTER TABLE "shares" DROP CONSTRAINT "FK_shares_user"`
     );
     await queryRunner.query(
-      `ALTER TABLE "images" DROP CONSTRAINT "FK_images_user"`,
+      `ALTER TABLE "images" DROP CONSTRAINT "FK_images_user"`
     );
 
     // 删除表

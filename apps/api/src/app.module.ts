@@ -1,9 +1,10 @@
+import { CacheModule } from '@nestjs/cache-manager';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CacheModule } from '@nestjs/cache-manager';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AuthModule } from './auth/auth.module';
 import { getDatabaseConfig } from './config/database.config';
 import { getRedisConfig } from './config/redis.config';
 
@@ -18,6 +19,7 @@ import { getRedisConfig } from './config/redis.config';
       isGlobal: true,
       useFactory: getRedisConfig,
     }),
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
