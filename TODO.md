@@ -19,7 +19,7 @@
 ### 1.3 设置开发环境
 
 - [x] 配置 pnpm workspace
-- [ ] 设置 TypeScript 配置
+- [x] 设置 TypeScript 配置
 - [x] 配置 ESLint 和 Prettier
 - [ ] 设置 Husky 和 lint-staged
 

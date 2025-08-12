@@ -25,15 +25,17 @@
     }
   },
   "include": [
-    "src/**/*",
-    "**/*.ts",
-    "**/*.tsx"
+    "apps/web/**/*",
+    "packages/**/*"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "build",
     ".next",
-    "out"
+    "out",
+    "**/*.spec.ts",
+    "**/*.e2e-spec.ts",
+    "apps/api/**/*"
   ]
 }
