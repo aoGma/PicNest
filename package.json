@@ -1,0 +1,49 @@
+{
+  "name": "picnest",
+  "version": "1.0.0",
+  "description": "现代化的图片托管和分享平台",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:web": "turbo run dev --filter=@picnest/web",
+    "dev:api": "turbo run dev --filter=@picnest/api",
+    "build": "turbo run build",
+    "build:web": "turbo run build --filter=@picnest/web",
+    "build:api": "turbo run build --filter=@picnest/api",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "turbo": "^2.5.5",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": "20.19.4",
+    "pnpm": "10.14.0"
+  },
+  "packageManager": "pnpm@10.14.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/picnest.git"
+  },
+  "keywords": [
+    "image-hosting",
+    "file-sharing",
+    "nestjs",
+    "react",
+    "typescript",
+    "monorepo"
+  ],
+  "author": "Your Name <your-email@example.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-username/picnest/issues"
+  },
+  "homepage": "https://github.com/your-username/picnest#readme"
+}

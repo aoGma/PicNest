@@ -1,0 +1,15 @@
+{
+  "name": "@picnest/config",
+  "version": "1.0.0",
+  "description": "PicNest 项目共享配置",
+  "private": true,
+  "main": "index.js",
+  "files": [
+    "tsconfig.json",
+    "eslint.config.js",
+    "prettier.config.js"
+  ],
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}
