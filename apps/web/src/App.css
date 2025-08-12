@@ -148,6 +148,10 @@ body {
   .header-content {
     max-width: 100%;
   }
+  
+  .footer-content {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -167,5 +171,17 @@ body {
   
   .feature-card {
     padding: 24px;
+  }
+  
+  .hero-section {
+    margin-bottom: 40px;
+  }
+  
+  .app-footer {
+    padding: 32px 16px 16px;
+  }
+  
+  .footer-section {
+    text-align: center;
   }
 }

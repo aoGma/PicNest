@@ -124,7 +124,7 @@ function App() {
           
           <div className="footer-bottom">
             <Text style={{ color: '#b0b0b0' }}>
-              © 2024 PicNest. 让图片分享更简单、更安全、更高效 🎯
+              © 2025 PicNest. 让图片分享更简单、更安全、更高效 🎯
             </Text>
           </div>
         </div>

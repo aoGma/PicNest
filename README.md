@@ -56,16 +56,65 @@
 PicNestProjectRoot/
 ├── apps/
 │   ├── web/                 # React前端应用
+│   │   ├── src/
+│   │   │   ├── App.tsx      # 主应用组件
+│   │   │   ├── App.css      # 应用样式
+│   │   │   └── main.tsx     # 应用入口
+│   │   ├── package.json     # 前端依赖配置
+│   │   └── vite.config.ts   # Vite构建配置
 │   └── api/                 # NestJS后端API
+│       ├── src/
+│       │   ├── app.module.ts    # 主模块
+│       │   ├── app.controller.ts # 主控制器
+│       │   ├── app.service.ts   # 主服务
+│       │   ├── entities/        # 数据库实体
+│       │   │   ├── user.entity.ts
+│       │   │   ├── image.entity.ts
+│       │   │   └── share.entity.ts
+│       │   └── config/          # 配置文件
+│       │       ├── database.config.ts
+│       │       └── redis.config.ts
+│       └── package.json     # 后端依赖配置
 ├── packages/
-│   ├── ui/                  # 共享UI组件
-│   ├── config/              # 共享配置
-│   ├── types/               # 共享类型定义
-│   └── utils/               # 共享工具函数
-├── tools/                   # 开发工具和脚本
-├── docs/                    # 项目文档
-└── docker/                  # Docker配置文件
+│   └── config/              # 共享配置包
+│       ├── package.json
+│       └── tsconfig.json
+├── .env                     # 环境变量
+├── .env.example            # 环境变量模板
+├── .gitignore              # Git忽略文件
+├── .nvmrc                  # Node.js版本
+├── .prettierrc             # Prettier配置
+├── .prettierignore         # Prettier忽略文件
+├── package.json            # 根包配置
+├── pnpm-workspace.yaml     # pnpm工作空间配置
+├── turbo.json              # Turbo构建配置
+├── tsconfig.json           # 根TypeScript配置
+├── README.md               # 项目文档
+└── TODO.md                 # 开发计划
 ```
+
+## 📊 当前状态
+
+### ✅ 已完成功能
+
+- **项目基础架构**: Monorepo 结构、Turbo 构建系统、pnpm 工作空间
+- **开发环境**: TypeScript 配置、ESLint + Prettier、环境变量管理
+- **后端基础**: NestJS 应用、PostgreSQL 数据库、Redis 缓存
+- **数据库设计**: 用户、图片、分享三个核心实体
+- **前端基础**: React + Vite、Ant Design UI、响应式布局
+- **首页设计**: 现代化 UI、功能展示、详细页脚
+
+### 🔄 进行中功能
+
+- **后端 API**: 基础接口已完成，准备开发用户认证模块
+- **前端界面**: 基础布局已完成，准备开发认证页面
+
+### 📋 下一步计划
+
+1. **用户认证系统** - 注册、登录、JWT 认证
+2. **图片上传功能** - 文件上传、类型验证、存储管理
+3. **用户管理界面** - 用户设置、存储空间管理
+4. **图片管理功能** - 图片列表、编辑、删除
 
 ## 🚀 快速开始
 
@@ -96,22 +145,53 @@ cp .env.example .env
 pnpm dev
 
 # 或分别启动
-pnpm dev:web    # 启动前端
-pnpm dev:api    # 启动后端
+pnpm dev:web    # 启动前端 (http://localhost:5173)
+pnpm dev:api    # 启动后端 (http://localhost:3000)
+
+# 构建项目
+pnpm build      # 构建所有应用
+pnpm build:web  # 构建前端
+pnpm build:api  # 构建后端
+
+# 代码检查
+pnpm lint       # 检查所有代码
+pnpm lint:fix   # 自动修复代码格式
 ```
 
-## 📋 开发计划
+### 数据库和缓存
 
-### 第一阶段：项目基础搭建
+```bash
+# 启动 PostgreSQL (Docker)
+docker run --name picnest-postgres \
+  -e POSTGRES_DB=picnest \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=password \
+  -p 5432:5432 \
+  -d postgres:15
 
-- [ ] 初始化Monorepo项目结构
-- [ ] 配置Turbo构建系统
-- [ ] 设置开发环境和工具链
-- [ ] 配置数据库和Redis
-- [ ] 基础项目文档
+# 启动 Redis (Docker)
+docker run --name picnest-redis \
+  -p 6379:6379 \
+  -d redis:7-alpine
+```
 
-### 第二阶段：后端API开发
+## 📋 开发进度
 
+### ✅ 第一阶段：项目基础搭建 (已完成)
+
+- [x] 初始化Monorepo项目结构
+- [x] 配置Turbo构建系统
+- [x] 设置开发环境和工具链
+- [x] 配置数据库和Redis
+- [x] 基础项目文档
+
+### ✅ 第二阶段：后端API开发 (进行中)
+
+- [x] NestJS 应用创建和配置
+- [x] TypeORM 和 PostgreSQL 配置
+- [x] Redis 连接配置
+- [x] 数据库实体设计 (User, Image, Share)
+- [x] 基础 API 接口 (健康检查、缓存操作)
 - [ ] 用户认证模块
 - [ ] 用户管理模块
 - [ ] 图片上传模块
@@ -120,16 +200,19 @@ pnpm dev:api    # 启动后端
 - [ ] 病毒扫描集成
 - [ ] 任务队列系统
 
-### 第三阶段：前端界面开发
+### ✅ 第三阶段：前端界面开发 (进行中)
 
-- [ ] 用户界面设计
+- [x] React 应用创建和配置
+- [x] Vite 构建工具配置
+- [x] Ant Design UI 组件集成
+- [x] 基础布局组件
+- [x] 响应式首页设计
 - [ ] 认证页面
 - [ ] 图片上传界面
 - [ ] 图片管理界面
 - [ ] 用户管理界面
-- [ ] 响应式布局
 
-### 第四阶段：核心功能实现
+### 🔄 第四阶段：核心功能实现 (待开始)
 
 - [ ] 图片分享功能
 - [ ] 短链接生成
@@ -138,7 +221,7 @@ pnpm dev:api    # 启动后端
 - [ ] 存储空间管理
 - [ ] 访问统计
 
-### 第五阶段：优化和测试
+### 🔄 第五阶段：优化和测试 (待开始)
 
 - [ ] 性能优化
 - [ ] 安全加固
