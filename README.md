@@ -114,9 +114,9 @@ PicNestProjectRoot/
 
 ### 🔄 进行中功能
 
-- **后端 API**: 基础接口已完成，准备开发用户认证模块
+- **后端 API**: 基础接口和数据库迁移已完成，准备开发用户认证模块
 - **前端界面**: 基础布局已完成，准备开发认证页面
-- **数据库迁移**: 实体设计完成，准备创建迁移文件
+- **API 文档**: Swagger 文档已配置，可访问 http://localhost:3000/api
 
 ### 📋 下一步计划
 
@@ -219,6 +219,8 @@ docker run --name picnest-redis \
 - [x] TypeORM 和 PostgreSQL 配置
 - [x] Redis 连接配置
 - [x] 数据库实体设计 (User, Image, Share)
+- [x] 数据库迁移文件创建和部署
+- [x] Swagger API 文档配置
 - [x] 基础 API 接口 (健康检查、缓存操作)
 - [ ] 用户认证模块
 - [ ] 用户管理模块

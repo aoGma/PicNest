@@ -19,17 +19,37 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
   },
   "devDependencies": {
+    "@eslint/js": "^9.33.0",
     "@types/node": "^24.2.1",
     "eslint": "^9.33.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
     "prettier": "^3.6.2",
     "turbo": "^2.5.5",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.1"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
+    "apps/web/**/*.{js,jsx,ts,tsx}": [
+      "cd apps/web && eslint --fix",
+      "cd apps/web && prettier --write"
+    ],
+    "apps/api/**/*.{js,jsx,ts,tsx}": [
+      "cd apps/api && eslint --fix",
+      "cd apps/api && prettier --write"
+    ],
+    "packages/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write"
+    ],
+    "apps/web/**/*.{json,md,yml,yaml,css,scss}": [
+      "cd apps/web && prettier --write"
+    ],
+    "apps/api/**/*.{json,md,yml,yaml,css,scss}": [
+      "cd apps/api && prettier --write"
+    ],
+    "packages/**/*.{json,md,yml,yaml,css,scss}": [
       "prettier --write"
     ],
     "*.{json,md,yml,yaml,css,scss}": [
