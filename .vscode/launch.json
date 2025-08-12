@@ -1,0 +1,54 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Web App",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/apps/web/node_modules/.bin/vite",
+      "args": ["--port", "3000"],
+      "cwd": "${workspaceFolder}/apps/web",
+      "console": "integratedTerminal",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "Debug API Server",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/apps/api/src/main.ts",
+      "cwd": "${workspaceFolder}/apps/api",
+      "console": "integratedTerminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "runtimeArgs": ["-r", "ts-node/register"],
+      "restart": true
+    },
+    {
+      "name": "Debug API Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/apps/api/node_modules/.bin/jest",
+      "args": ["--runInBand", "--no-cache"],
+      "cwd": "${workspaceFolder}/apps/api",
+      "console": "integratedTerminal",
+      "env": {
+        "NODE_ENV": "test"
+      }
+    },
+    {
+      "name": "Debug Web Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/apps/web/node_modules/.bin/vitest",
+      "args": ["--run"],
+      "cwd": "${workspaceFolder}/apps/web",
+      "console": "integratedTerminal",
+      "env": {
+        "NODE_ENV": "test"
+      }
+    }
+  ]
+}

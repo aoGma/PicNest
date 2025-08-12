@@ -1,0 +1,51 @@
+{
+  "recommendations": [
+    // 核心开发工具
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.vscode-typescript-next",
+
+    // React 开发
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-react-native",
+
+    // NestJS 开发
+    "ashinzekene.nestjs",
+
+    // Git 工具
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+
+    // 主题和图标
+    "pkief.material-icon-theme",
+    "zhuangtongfa.material-theme",
+
+    // 代码质量
+    "streetsidesoftware.code-spell-checker",
+    "ms-vscode.vscode-json",
+
+    // 调试工具
+    "ms-vscode.vscode-js-debug",
+    "ms-vscode.vscode-js-debug-companion",
+
+    // 测试工具
+    "orta.vscode-jest",
+
+    // 数据库工具
+    "ms-mssql.mssql",
+    "cweijan.vscode-postgresql-client2",
+
+    // API 工具
+    "humao.rest-client",
+
+    // 其他实用工具
+    "ms-vscode.vscode-docker",
+    "ms-azuretools.vscode-docker",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.vscode-npm-script",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-css-peek",
+    "ms-vscode.vscode-html-css-support"
+  ]
+}
