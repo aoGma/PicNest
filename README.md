@@ -47,8 +47,10 @@
 - **Monorepo**: Turbo
 - **代码规范**: ESLint + Prettier
 - **类型检查**: TypeScript
+- **代码质量**: Husky + lint-staged
+- **容器化**: Docker + Docker Compose
+- **IDE配置**: VSCode 工作区设置
 - **测试**: Jest + React Testing Library
-- **Docker**: 容器化部署
 
 ## 📁 项目结构
 
@@ -85,12 +87,15 @@ PicNestProjectRoot/
 ├── .nvmrc                  # Node.js版本
 ├── .prettierrc             # Prettier配置
 ├── .prettierignore         # Prettier忽略文件
+├── .husky/                 # Git钩子配置
+├── docker-compose.yml      # Docker容器配置
 ├── package.json            # 根包配置
 ├── pnpm-workspace.yaml     # pnpm工作空间配置
 ├── turbo.json              # Turbo构建配置
 ├── tsconfig.json           # 根TypeScript配置
 ├── README.md               # 项目文档
-└── TODO.md                 # 开发计划
+├── TODO.md                 # 开发计划
+└── VSCODE_SETUP.md         # VSCode配置说明
 ```
 
 ## 📊 当前状态
@@ -98,7 +103,10 @@ PicNestProjectRoot/
 ### ✅ 已完成功能
 
 - **项目基础架构**: Monorepo 结构、Turbo 构建系统、pnpm 工作空间
-- **开发环境**: TypeScript 配置、ESLint + Prettier、环境变量管理
+- **开发环境**: TypeScript 配置、ESLint + Prettier、Husky + lint-staged
+- **代码质量**: 自动格式化、提交前检查、代码规范统一
+- **Docker 环境**: PostgreSQL 和 Redis 容器化配置
+- **VSCode 配置**: 工作区设置、推荐扩展、调试配置
 - **后端基础**: NestJS 应用、PostgreSQL 数据库、Redis 缓存
 - **数据库设计**: 用户、图片、分享三个核心实体
 - **前端基础**: React + Vite、Ant Design UI、响应式布局
@@ -108,6 +116,7 @@ PicNestProjectRoot/
 
 - **后端 API**: 基础接口已完成，准备开发用户认证模块
 - **前端界面**: 基础布局已完成，准备开发认证页面
+- **数据库迁移**: 实体设计完成，准备创建迁移文件
 
 ### 📋 下一步计划
 
@@ -160,6 +169,21 @@ pnpm lint:fix   # 自动修复代码格式
 
 ### 数据库和缓存
 
+#### 使用 Docker Compose (推荐)
+
+```bash
+# 启动所有服务
+docker-compose up -d
+
+# 查看服务状态
+docker-compose ps
+
+# 停止服务
+docker-compose down
+```
+
+#### 手动启动容器
+
 ```bash
 # 启动 PostgreSQL (Docker)
 docker run --name picnest-postgres \
@@ -182,6 +206,10 @@ docker run --name picnest-redis \
 - [x] 初始化Monorepo项目结构
 - [x] 配置Turbo构建系统
 - [x] 设置开发环境和工具链
+- [x] 配置TypeScript、ESLint、Prettier
+- [x] 设置Husky和lint-staged代码质量检查
+- [x] 配置Docker容器环境
+- [x] 设置VSCode开发环境
 - [x] 配置数据库和Redis
 - [x] 基础项目文档
 
